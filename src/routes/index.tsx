@@ -8,16 +8,19 @@ import {
 } from "lucide-react";
 
 import heroAsset from "@/assets/hero-bg.jpg.asset.json";
-import founderAsset from "@/assets/founder-real.jpg.asset.json";
-import g1 from "@/assets/gallery-1.jpg";
-import g2 from "@/assets/gallery-2.jpg";
-import g3 from "@/assets/gallery-3.jpg";
-import g4 from "@/assets/gallery-4.jpg";
-import g5 from "@/assets/gallery-5.jpg";
-import g6 from "@/assets/gallery-6.jpg";
+import founderAsset from "@/assets/founder-podcast.jpg.asset.json";
+import logoAsset from "@/assets/logo-dj.png.asset.json";
+import studentsBatch from "@/assets/students-batch.jpg.asset.json";
+import certCeremony from "@/assets/certificate-ceremony.jpg.asset.json";
+import speakingVipsar from "@/assets/speaking-vipsar.jpg.asset.json";
+import speakingPodium from "@/assets/speaking-podium.jpg.asset.json";
+import felicitation from "@/assets/felicitation.jpg.asset.json";
+import showreel1 from "@/assets/showreel-1.mp4.asset.json";
+import showreel2 from "@/assets/showreel-2.mp4.asset.json";
 
 const heroImg = heroAsset.url;
 const founderImg = founderAsset.url;
+const logoImg = logoAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -45,6 +48,8 @@ function HomePage() {
       <Courses />
       <WhyUs />
       <Counters />
+      <Showreel />
+      <Recognition />
       <Gallery />
       <Testimonials />
       <Blog />
