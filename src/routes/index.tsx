@@ -182,7 +182,7 @@ function About() {
           <div className="mt-10 grid gap-5 sm:grid-cols-2">
             <Pillar icon={<Award className="h-5 w-5" />} title="Our Mission" desc="Equip creators with cinema-grade craft, vision and confidence to lead the next wave of Indian storytelling." />
             <Pillar icon={<Lightbulb className="h-5 w-5" />} title="Our Vision" desc="Become Central India's premier launchpad for cinematographers, photographers and digital filmmakers." />
-            <Pillar icon={<Briefcase className="h-5 w-5" />} title="Industry Pedigree" desc="15+ years across weddings, brand films, documentaries, music videos and ad commercials." />
+            <Pillar icon={<Briefcase className="h-5 w-5" />} title="Industry Pedigree" desc="30+ years across weddings, brand films, documentaries, music videos and ad commercials — and official Panasonic LUMIX mentor." />
             <Pillar icon={<GraduationCap className="h-5 w-5" />} title="Mentor-Led" desc="Small batches, personal mentorship and live critique on every assignment." />
           </div>
         </div>
