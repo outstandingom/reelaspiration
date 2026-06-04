@@ -597,7 +597,7 @@ function Footer() {
         <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
           <div>
             <div className="flex items-center gap-2">
-              <div className="grid h-9 w-9 place-items-center rounded-md bg-gradient-gold text-primary-foreground"><Clapperboard className="h-5 w-5" /></div>
+              <img src={logoImg} alt="" width={40} height={40} className="h-10 w-10 object-contain invert" />
               <div className="font-display text-lg">Dinesh Jagwani Cinematography Academy</div>
             </div>
             <p className="mt-2 max-w-md text-sm text-muted-foreground">Indore's premier film and photography academy. Master the craft, build a portfolio, launch your career.</p>
