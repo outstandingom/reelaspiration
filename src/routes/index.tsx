@@ -7,14 +7,17 @@ import {
   GraduationCap, Aperture, Clapperboard,
 } from "lucide-react";
 
-import heroImg from "@/assets/hero-cinema.jpg";
-import founderImg from "@/assets/founder.jpg";
+import heroAsset from "@/assets/hero-bg.jpg.asset.json";
+import founderAsset from "@/assets/founder-real.jpg.asset.json";
 import g1 from "@/assets/gallery-1.jpg";
 import g2 from "@/assets/gallery-2.jpg";
 import g3 from "@/assets/gallery-3.jpg";
 import g4 from "@/assets/gallery-4.jpg";
 import g5 from "@/assets/gallery-5.jpg";
 import g6 from "@/assets/gallery-6.jpg";
+
+const heroImg = heroAsset.url;
+const founderImg = founderAsset.url;
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,8 +32,9 @@ export const Route = createFileRoute("/")({
   component: HomePage,
 });
 
-const WHATSAPP = "https://wa.me/919999999999?text=Hi%20Dinesh%20Jagwani%20Academy%2C%20I%20want%20course%20details";
-const PHONE = "tel:+919999999999";
+const WHATSAPP = "https://wa.me/919826019972?text=Hi%20Dinesh%20Jagwani%20Academy%2C%20I%20want%20course%20details";
+const PHONE = "tel:+919826019972";
+const ADDRESS = "209-C, Surya Dev Nagar, Indore, Madhya Pradesh 452010";
 
 function HomePage() {
   return (
@@ -103,7 +107,7 @@ function Hero() {
   return (
     <section id="top" className="relative isolate min-h-screen overflow-hidden">
       <div className="absolute inset-0 -z-10">
-        <img src={heroImg} alt="Cinematic camera in dark studio" width={1920} height={1080} className="h-full w-full object-cover animate-ken-burns" />
+        <img src={heroImg} alt="Dinesh Jagwani at Lumix podcast studio" width={1920} height={1080} className="h-full w-full object-cover object-center animate-ken-burns" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/55 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,oklch(0.82_0.15_84_/_0.18),transparent_60%)]" />
       </div>
@@ -420,8 +424,8 @@ function Contact() {
         <div className="space-y-6">
           <p className="text-muted-foreground">Book a free consultation, visit our studio in Indore, or message us on WhatsApp — we'll help you choose the right program.</p>
           <div className="grid gap-3">
-            <ContactRow icon={<MapPin className="h-4 w-4" />} label="Studio Address" value="Dinesh Jagwani Academy, Indore, Madhya Pradesh" />
-            <ContactRow icon={<Phone className="h-4 w-4" />} label="Call Us" value="+91 99999 99999" href={PHONE} />
+            <ContactRow icon={<MapPin className="h-4 w-4" />} label="Studio Address" value={ADDRESS} />
+            <ContactRow icon={<Phone className="h-4 w-4" />} label="Call Us" value="+91 98260 19972" href={PHONE} />
             <ContactRow icon={<Mail className="h-4 w-4" />} label="Email" value="hello@dineshjagwani.academy" href="mailto:hello@dineshjagwani.academy" />
           </div>
           <div className="flex flex-wrap gap-3">
@@ -435,7 +439,7 @@ function Contact() {
           <div className="overflow-hidden rounded-xl gold-border">
             <iframe
               title="Indore Studio Map"
-              src="https://www.google.com/maps?q=Indore%2C%20Madhya%20Pradesh&output=embed"
+              src="https://www.google.com/maps?q=209-C%2C%20Surya%20Dev%20Nagar%2C%20Indore%2C%20Madhya%20Pradesh%20452010&output=embed"
               className="h-64 w-full"
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
