@@ -314,6 +314,83 @@ function Counter({ n, s, l, icon }: { n: number; s: string; l: string; icon: Rea
 
 /* ---------- GALLERY ---------- */
 function Gallery() {
+  return GalleryImpl();
+}
+
+/* ---------- SHOWREEL ---------- */
+function Showreel() {
+  const videos = [
+    { src: showreel1.url, title: "Cinematic Showreel · Vol. 01", tag: "Live Shoot" },
+    { src: showreel2.url, title: "Behind The Lens · Vol. 02", tag: "On Set" },
+  ];
+  return (
+    <section id="showreel" className="relative overflow-hidden py-24 sm:py-32">
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_50%_0%,oklch(0.82_0.15_84_/_0.08),transparent_60%)]" />
+      <SectionLabel kicker="Showreel" title={<>The Craft <span className="gradient-gold-text">In Motion</span></>} />
+      <p className="mx-auto mt-5 max-w-2xl px-5 text-center text-sm text-muted-foreground">
+        Real frames from real sets. A glimpse into the cinematic language we teach — lighting, motion, story and emotion.
+      </p>
+      <div className="mx-auto mt-14 grid max-w-7xl gap-8 px-5 lg:grid-cols-2">
+        {videos.map((v, i) => (
+          <figure key={i} className="group relative overflow-hidden rounded-2xl border border-gold/30 bg-card/40 shadow-cinema">
+            <div className="absolute -inset-2 -z-10 rounded-2xl bg-gradient-gold opacity-20 blur-2xl" />
+            <video
+              src={v.src}
+              className="aspect-video w-full bg-black object-cover"
+              controls
+              playsInline
+              preload="metadata"
+              poster={heroImg}
+            />
+            <figcaption className="flex items-center justify-between border-t border-border bg-background/60 px-5 py-4 backdrop-blur">
+              <div>
+                <div className="text-[10px] uppercase tracking-[0.25em] text-gold">{v.tag}</div>
+                <div className="font-display text-lg">{v.title}</div>
+              </div>
+              <div className="grid h-10 w-10 place-items-center rounded-full bg-gradient-gold text-primary-foreground">
+                <Play className="h-4 w-4" />
+              </div>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+/* ---------- RECOGNITION ---------- */
+function Recognition() {
+  const cards = [
+    { src: felicitation.url, tag: "Felicitation", title: "Honoured by Industry & Community Leaders", desc: "Recognised for 30+ years of contribution to cinematography and photography education." },
+    { src: speakingPodium.url, tag: "Keynote Speaker", title: "Speaking at VIPSAR · Drone Awareness Program", desc: "Invited as guest speaker on the future of aerial cinematography and visual storytelling." },
+    { src: certCeremony.url, tag: "Graduating Batch", title: "Certified Cinematographers, Launched Careers", desc: "Every batch graduates with a real portfolio and an academy-issued certificate of completion." },
+    { src: studentsBatch.url, tag: "Mentor Circle", title: "A Studio Family, Not Just a Classroom", desc: "Small batches, deep mentorship — students stay connected long after graduation." },
+  ];
+  return (
+    <section id="recognition" className="bg-gradient-to-b from-background via-card/30 to-background py-24 sm:py-32">
+      <SectionLabel kicker="Recognition & Impact" title={<>Trusted Across the <span className="gradient-gold-text">Industry</span></>} />
+      <div className="mx-auto mt-16 grid max-w-7xl gap-6 px-5 md:grid-cols-2">
+        {cards.map((c, i) => (
+          <article key={i} className="group relative overflow-hidden rounded-2xl border border-border bg-card/60 hover-lift">
+            <div className="relative aspect-[16/10] overflow-hidden">
+              <img src={c.src} alt={c.title} loading="lazy" className="h-full w-full object-cover transition duration-700 group-hover:scale-105" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/30 to-transparent" />
+              <div className="absolute left-4 top-4 rounded-full border border-gold/40 bg-background/70 px-3 py-1 text-[10px] uppercase tracking-[0.25em] text-gold backdrop-blur">
+                {c.tag}
+              </div>
+            </div>
+            <div className="p-6">
+              <h3 className="font-display text-xl text-foreground">{c.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{c.desc}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function GalleryImpl() {
   const imgs = [
     { src: studentsBatch.url, alt: "Cinematography Academy students batch with Dinesh Jagwani", cls: "col-span-2 row-span-2" },
     { src: certCeremony.url, alt: "Student certification ceremony at the academy" },
