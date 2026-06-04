@@ -106,21 +106,22 @@ function Nav() {
 function Hero() {
   return (
     <section id="top" className="relative isolate min-h-screen overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <img src={heroImg} alt="Dinesh Jagwani at Lumix podcast studio" width={1920} height={1080} className="h-full w-full object-cover object-center animate-ken-burns" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/55 to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,oklch(0.82_0.15_84_/_0.18),transparent_60%)]" />
+      {/* Ambient backdrop using a heavily blurred version of the hero image so the studio scene reads on every screen size */}
+      <div className="absolute inset-0 -z-20">
+        <img src={heroImg} alt="" aria-hidden className="h-full w-full object-cover object-center scale-110 blur-2xl opacity-40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/75 to-background" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,oklch(0.82_0.15_84_/_0.18),transparent_60%)]" />
       </div>
-      <div className="mx-auto flex min-h-screen max-w-7xl flex-col justify-center px-5 pt-32 pb-20">
-        <div className="max-w-3xl animate-fade-up">
+      <div className="mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-5 pt-28 pb-20 lg:grid-cols-2 lg:pt-32">
+        <div className="animate-fade-up">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-gold">
             <Sparkles className="h-3.5 w-3.5" /> Indore's Premier Film Academy
           </div>
-          <h1 className="text-balance text-5xl leading-[1.05] sm:text-6xl lg:text-7xl">
+          <h1 className="text-balance text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">
             Master <span className="gradient-gold-text">Cinematography</span> & Filmmaking Like a Professional
           </h1>
           <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-            Hands-on training under mentor Dinesh Jagwani — real shoots, industry-grade equipment and a curriculum built on 15+ years of professional film experience.
+            Learn directly from <span className="text-foreground">Dinesh Jagwani</span> — official <span className="text-gold">Panasonic LUMIX mentor</span> with <span className="text-foreground">30+ years</span> of professional cinema, wedding and commercial filmmaking experience.
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
             <a href="#contact" className="group inline-flex items-center gap-2 rounded-md bg-gradient-gold px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-gold transition hover:opacity-90">
@@ -130,10 +131,21 @@ function Hero() {
               <Phone className="h-4 w-4 text-gold" /> Contact Us
             </a>
           </div>
-          <div className="mt-12 flex flex-wrap items-center gap-6 text-xs text-muted-foreground">
+          <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 text-xs text-muted-foreground">
             <Stat n="1500+" l="Students Trained" />
-            <Stat n="15+" l="Years Experience" />
-            <Stat n="50+" l="Industry Partners" />
+            <Stat n="30+" l="Years Experience" />
+            <Stat n="LUMIX" l="Official Mentor" />
+          </div>
+        </div>
+        {/* Showcase frame — keeps the full studio photo visible, never cropped */}
+        <div className="relative animate-fade-up lg:justify-self-end">
+          <div className="absolute -inset-4 rounded-2xl bg-gradient-gold opacity-25 blur-3xl" />
+          <div className="relative overflow-hidden rounded-2xl border border-gold/30 bg-card/40 shadow-cinema">
+            <img src={heroImg} alt="Dinesh Jagwani at the Panasonic LUMIX podcast studio" width={1600} height={1067} className="h-full w-full object-contain" />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
+            <div className="absolute bottom-3 left-3 rounded-md bg-background/70 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-gold backdrop-blur">
+              LUMIX Studio · Mentor Session
+            </div>
           </div>
         </div>
       </div>
