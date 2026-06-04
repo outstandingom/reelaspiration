@@ -78,8 +78,9 @@ function Nav() {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${scrolled ? "glass border-b border-border" : "bg-transparent"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
-        <a href="#top" className="flex items-center gap-2">
-          <div className="grid h-9 w-9 place-items-center rounded-md bg-gradient-gold text-primary-foreground"><Clapperboard className="h-5 w-5" /></div>
+        <a href="#top" className="flex items-center gap-3">
+          <img src={logoImg} alt="Dinesh Jagwani Cinematography" width={44} height={44}
+            className="h-11 w-11 object-contain invert" />
           <div className="leading-tight">
             <div className="font-display text-base text-foreground">Dinesh Jagwani</div>
             <div className="text-[10px] uppercase tracking-[0.18em] text-gold">Cinematography Academy</div>
@@ -314,12 +315,11 @@ function Counter({ n, s, l, icon }: { n: number; s: string; l: string; icon: Rea
 /* ---------- GALLERY ---------- */
 function Gallery() {
   const imgs = [
-    { src: g1, alt: "Behind the scenes cinematography shoot", cls: "row-span-2" },
-    { src: g3, alt: "Wedding cinematography golden hour" },
-    { src: g5, alt: "Professional camera lenses lineup" },
-    { src: g2, alt: "Photography studio lighting setup", cls: "col-span-2" },
-    { src: g4, alt: "Color grading suite" },
-    { src: g6, alt: "Drone aerial cinematography" },
+    { src: studentsBatch.url, alt: "Cinematography Academy students batch with Dinesh Jagwani", cls: "col-span-2 row-span-2" },
+    { src: certCeremony.url, alt: "Student certification ceremony at the academy" },
+    { src: speakingPodium.url, alt: "Dinesh Jagwani delivering keynote on filmmaking" },
+    { src: felicitation.url, alt: "Dinesh Jagwani being felicitated by industry leaders", cls: "col-span-2" },
+    { src: speakingVipsar.url, alt: "Drone awareness program seminar audience" },
   ];
   return (
     <section id="gallery" className="py-24 sm:py-32">
