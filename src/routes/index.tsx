@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
 });
 
 const WHATSAPP = "https://wa.me/919826019972?text=Hi%20Dinesh%20Jagwani%20Academy%2C%20I%20want%20course%20details";
-const PHONE = "tel:+919826019972";
+const PHONE = "tel:+91982601997";
 const ADDRESS = "209-C, Surya Dev Nagar, Indore, Madhya Pradesh 452010";
 
 function HomePage() {
