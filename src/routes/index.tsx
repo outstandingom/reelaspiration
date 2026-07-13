@@ -171,7 +171,7 @@ function Hero() {
           <div className="absolute -inset-4 rounded-2xl bg-gradient-gold opacity-25 blur-3xl" />
           <div className="relative overflow-hidden rounded-2xl border border-gold/30 bg-card/40 shadow-cinema w-full h-full">
             <img
-              src={heroImage}
+              src="src/assets/lumix.jpeg"
               alt="Dinesh Jagwani at the Panasonic LUMIX podcast studio"
               className="h-full w-full object-cover object-center"
             />
