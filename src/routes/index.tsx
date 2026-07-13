@@ -115,7 +115,7 @@ function Hero() {
       {/* Ambient backdrop using a heavily blurred version of the hero image so the studio scene reads on every screen size */}
       <div className="absolute inset-0 -z-20">
       <img 
-  src="https://i.ibb.co/QjmV1sq0/Whats-App-Image-2026-07-13-at-4-24-44-PM.jpg" 
+  src="/lumix.jpeg" 
   alt="" 
   aria-hidden 
   className="h-full w-full object-cover object-center scale-110 blur-2xl opacity-40" 
