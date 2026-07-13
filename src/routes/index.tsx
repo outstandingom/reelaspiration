@@ -18,7 +18,7 @@ import felicitation from "@/assets/felicitation.jpg.asset.json";
 import showreel1 from "@/assets/showreel-1.mp4.asset.json";
 import showreel2 from "@/assets/showreel-2.mp4.asset.json";
 
-const heroImg = heroAsset.url;   // kept for other uses (e.g., showreel poster)
+const heroImg = heroAsset.url;
 const founderImg = founderAsset.url;
 const logoImg = logoAsset.url;
 
@@ -127,7 +127,7 @@ function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,oklch(0.82_0.15_84_/_0.18),transparent_60%)]" />
       </div>
 
-      {/* Main grid – left: text (bottom‑left), right: hero image */}
+      {/* Main grid – left: text (bottom‑left), right: hero image (larger) */}
       <div className="mx-auto grid min-h-screen max-w-7xl items-end gap-12 px-5 pt-28 pb-20 lg:grid-cols-2 lg:pt-32">
         {/* Left column – text content, bottom‑left aligned */}
         <div className="animate-fade-up flex h-full flex-col justify-end text-left">
@@ -166,16 +166,14 @@ function Hero() {
           </div>
         </div>
 
-        {/* Right column – the hero image (using your external link) */}
-        <div className="relative animate-fade-up lg:justify-self-end">
+        {/* Right column – hero image (now uses object‑cover and fills the container) */}
+        <div className="relative animate-fade-up lg:justify-self-end w-full h-full min-h-[400px] lg:min-h-[600px]">
           <div className="absolute -inset-4 rounded-2xl bg-gradient-gold opacity-25 blur-3xl" />
-          <div className="relative overflow-hidden rounded-2xl border border-gold/30 bg-card/40 shadow-cinema">
+          <div className="relative overflow-hidden rounded-2xl border border-gold/30 bg-card/40 shadow-cinema w-full h-full">
             <img
               src={heroImage}
               alt="Dinesh Jagwani at the Panasonic LUMIX podcast studio"
-              width={1600}
-              height={1067}
-              className="h-full w-full object-contain"
+              className="h-full w-full object-cover object-center"
             />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
             <div className="absolute bottom-3 left-3 rounded-md bg-background/70 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-gold backdrop-blur">
