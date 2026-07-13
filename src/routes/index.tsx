@@ -119,7 +119,7 @@ function Hero() {
       <div className="absolute inset-0 -z-20">
         <img
           src={heroImage}
-          alt=""
+          alt="/lumix.jpeg"
           aria-hidden
           className="h-full w-full object-cover object-center scale-110 blur-2xl opacity-40"
         />
