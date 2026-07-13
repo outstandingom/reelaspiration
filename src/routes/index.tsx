@@ -1,4 +1,4 @@
-this my cdoe wgive completecode whichi can replacew th ymy exsiting import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
   Camera, Film, Video, Image as ImageIcon, Sparkles, Lightbulb,
