@@ -18,7 +18,7 @@ import felicitation from "@/assets/felicitation.jpg.asset.json";
 import showreel1 from "@/assets/showreel-1.mp4.asset.json";
 import showreel2 from "@/assets/showreel-2.mp4.asset.json";
 
-const heroImg = heroAsset.url;
+const heroImg = heroAsset.url;   // kept for other uses (e.g., showreel poster)
 const founderImg = founderAsset.url;
 const logoImg = logoAsset.url;
 
@@ -110,12 +110,15 @@ function Nav() {
 
 /* ========== UPDATED HERO ========== */
 function Hero() {
+  // Your external image URL
+  const heroImage = "https://i.ibb.co/QjmV1sq0/Whats-App-Image-2026-07-13-at-4-24-44-PM.jpg";
+
   return (
     <section id="top" className="relative isolate min-h-screen overflow-hidden">
-      {/* Ambient backdrop – blurred image with overlays */}
+      {/* Ambient backdrop – blurred version of your external image */}
       <div className="absolute inset-0 -z-20">
         <img
-          src="https://i.ibb.co/QjmV1sq0/Whats-App-Image-2026-07-13-at-4-24-44-PM.jpg"
+          src={heroImage}
           alt=""
           aria-hidden
           className="h-full w-full object-cover object-center scale-110 blur-2xl opacity-40"
@@ -124,23 +127,19 @@ function Hero() {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,oklch(0.82_0.15_84_/_0.18),transparent_60%)]" />
       </div>
 
-      {/* Content – bottom‑left aligned */}
-      <div className="mx-auto flex min-h-screen max-w-7xl flex-col justify-end px-5 pb-20 pt-28 lg:pt-32">
-        <div className="animate-fade-up max-w-2xl text-left">
-          {/* Kicker badge */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-gold">
+      {/* Main grid – left: text (bottom‑left), right: hero image */}
+      <div className="mx-auto grid min-h-screen max-w-7xl items-end gap-12 px-5 pt-28 pb-20 lg:grid-cols-2 lg:pt-32">
+        {/* Left column – text content, bottom‑left aligned */}
+        <div className="animate-fade-up flex h-full flex-col justify-end text-left">
+          <div className="mb-6 inline-flex items-center gap-2 self-start rounded-full border border-border bg-card/40 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-gold">
             <Sparkles className="h-3.5 w-3.5" /> Indore's Premier Film Academy
           </div>
-
           <h1 className="text-balance text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">
             Master <span className="gradient-gold-text">Cinematography</span> & Filmmaking Like a Professional
           </h1>
-
           <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
             Learn directly from <span className="text-foreground">Dinesh Jagwani</span> — official <span className="text-gold">Panasonic LUMIX mentor</span> with <span className="text-foreground">30+ years</span> of professional cinema, wedding and commercial filmmaking experience.
           </p>
-
-          {/* Buttons */}
           <div className="mt-9 flex flex-wrap gap-4">
             <a href="#contact" className="group inline-flex items-center gap-2 rounded-md bg-gradient-gold px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-gold transition hover:opacity-90">
               Enroll Now <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
@@ -149,15 +148,13 @@ function Hero() {
               <Phone className="h-4 w-4 text-gold" /> Contact Us
             </a>
           </div>
-
-          {/* Stats */}
           <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 text-xs text-muted-foreground">
             <Stat n="1500+" l="Students Trained" />
             <Stat n="30+" l="Years Experience" />
             <Stat n="LUMIX" l="Official Mentor" />
           </div>
 
-          {/* ✨ “Read More” with Forte font – placed below stats, bottom‑left */}
+          {/* ✨ “Read More” – bottom‑left, Forte font */}
           <div className="mt-10">
             <a
               href="#about"
@@ -166,6 +163,24 @@ function Hero() {
               Read More
               <ArrowRight className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
+          </div>
+        </div>
+
+        {/* Right column – the hero image (using your external link) */}
+        <div className="relative animate-fade-up lg:justify-self-end">
+          <div className="absolute -inset-4 rounded-2xl bg-gradient-gold opacity-25 blur-3xl" />
+          <div className="relative overflow-hidden rounded-2xl border border-gold/30 bg-card/40 shadow-cinema">
+            <img
+              src={heroImage}
+              alt="Dinesh Jagwani at the Panasonic LUMIX podcast studio"
+              width={1600}
+              height={1067}
+              className="h-full w-full object-contain"
+            />
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
+            <div className="absolute bottom-3 left-3 rounded-md bg-background/70 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-gold backdrop-blur">
+              LUMIX Studio · Mentor Session
+            </div>
           </div>
         </div>
       </div>
