@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+this my cdoe wgive completecode whichi can replacew th ymy exsiting import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import {
   Camera, Film, Video, Image as ImageIcon, Sparkles, Lightbulb,
@@ -108,30 +108,24 @@ function Nav() {
   );
 }
 
-/* ========== UPDATED HERO ========== */
+/* ---------- HERO ---------- */
 function Hero() {
-  // Your external image URL
-  const heroImage = "https://i.ibb.co/QjmV1sq0/Whats-App-Image-2026-07-13-at-4-24-44-PM.jpg";
-
   return (
     <section id="top" className="relative isolate min-h-screen overflow-hidden">
-      {/* Ambient backdrop – blurred version of your external image */}
+      {/* Ambient backdrop using a heavily blurred version of the hero image so the studio scene reads on every screen size */}
       <div className="absolute inset-0 -z-20">
-        <img
-          src={heroImage}
-          alt="/lumix.jpeg"
-          aria-hidden
-          className="h-full w-full object-cover object-center scale-110 blur-2xl opacity-40"
-        />
+      <img 
+  src="https://i.ibb.co/QjmV1sq0/Whats-App-Image-2026-07-13-at-4-24-44-PM.jpg" 
+  alt="" 
+  aria-hidden 
+  className="h-full w-full object-cover object-center scale-110 blur-2xl opacity-40" 
+/>
         <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/75 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,oklch(0.82_0.15_84_/_0.18),transparent_60%)]" />
       </div>
-
-      {/* Main grid – left: text (bottom‑left), right: hero image (larger) */}
-      <div className="mx-auto grid min-h-screen max-w-7xl items-end gap-12 px-5 pt-28 pb-20 lg:grid-cols-2 lg:pt-32">
-        {/* Left column – text content, bottom‑left aligned */}
-        <div className="animate-fade-up flex h-full flex-col justify-end text-left">
-          <div className="mb-6 inline-flex items-center gap-2 self-start rounded-full border border-border bg-card/40 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-gold">
+      <div className="mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-5 pt-28 pb-20 lg:grid-cols-2 lg:pt-32">
+        <div className="animate-fade-up">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-card/40 px-4 py-1.5 text-xs uppercase tracking-[0.25em] text-gold">
             <Sparkles className="h-3.5 w-3.5" /> Indore's Premier Film Academy
           </div>
           <h1 className="text-balance text-4xl leading-[1.05] sm:text-5xl lg:text-6xl">
@@ -153,28 +147,12 @@ function Hero() {
             <Stat n="30+" l="Years Experience" />
             <Stat n="LUMIX" l="Official Mentor" />
           </div>
-
-          {/* ✨ “Read More” – bottom‑left, Forte font */}
-          <div className="mt-10">
-            <a
-              href="#about"
-              className="inline-flex items-center gap-2 text-[#FFF314] text-base sm:text-lg md:text-xl font-forte transition-all duration-300 hover:underline underline-offset-4"
-            >
-              Read More
-              <ArrowRight className="w-5 h-5 md:w-6 md:h-6 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
-          </div>
         </div>
-
-        {/* Right column – hero image (now uses object‑cover and fills the container) */}
-        <div className="relative animate-fade-up lg:justify-self-end w-full h-full min-h-[400px] lg:min-h-[600px]">
+        {/* Showcase frame — keeps the full studio photo visible, never cropped */}
+        <div className="relative animate-fade-up lg:justify-self-end">
           <div className="absolute -inset-4 rounded-2xl bg-gradient-gold opacity-25 blur-3xl" />
-          <div className="relative overflow-hidden rounded-2xl border border-gold/30 bg-card/40 shadow-cinema w-full h-full">
-            <img
-              src="src/assets/lumix.jpeg"
-              alt="Dinesh Jagwani at the Panasonic LUMIX podcast studio"
-              className="h-full w-full object-cover object-center"
-            />
+          <div className="relative overflow-hidden rounded-2xl border border-gold/30 bg-card/40 shadow-cinema">
+            <img src={heroImg} alt="Dinesh Jagwani at the Panasonic LUMIX podcast studio" width={1600} height={1067} className="h-full w-full object-contain" />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
             <div className="absolute bottom-3 left-3 rounded-md bg-background/70 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-gold backdrop-blur">
               LUMIX Studio · Mentor Session
@@ -182,16 +160,12 @@ function Hero() {
           </div>
         </div>
       </div>
-
-      {/* Scroll down arrow */}
       <a href="#about" className="absolute bottom-6 left-1/2 -translate-x-1/2 text-gold/70 hover:text-gold" aria-label="scroll down">
         <ChevronDown className="h-7 w-7 animate-bounce" />
       </a>
     </section>
   );
 }
-/* ----- end Hero ----- */
-
 function Stat({ n, l }: { n: string; l: string }) {
   return <div><div className="font-display text-2xl text-gold">{n}</div><div className="uppercase tracking-widest">{l}</div></div>;
 }
