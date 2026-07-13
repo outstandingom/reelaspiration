@@ -114,7 +114,12 @@ function Hero() {
     <section id="top" className="relative isolate min-h-screen overflow-hidden">
       {/* Ambient backdrop using a heavily blurred version of the hero image so the studio scene reads on every screen size */}
       <div className="absolute inset-0 -z-20">
-        <img src={heroImg} alt="" aria-hidden className="h-full w-full object-cover object-center scale-110 blur-2xl opacity-40" />
+      <img 
+  src="https://i.ibb.co/QjmV1sq0/Whats-App-Image-2026-07-13-at-4-24-44-PM.jpg" 
+  alt="" 
+  aria-hidden 
+  className="h-full w-full object-cover object-center scale-110 blur-2xl opacity-40" 
+/>
         <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/75 to-background" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,oklch(0.82_0.15_84_/_0.18),transparent_60%)]" />
       </div>
