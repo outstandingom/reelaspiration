@@ -147,7 +147,13 @@ function Hero() {
         <div className="relative animate-fade-up lg:justify-self-end">
           <div className="absolute -inset-4 rounded-2xl bg-gradient-gold opacity-25 blur-3xl" />
           <div className="relative overflow-hidden rounded-2xl border border-gold/30 bg-card/40 shadow-cinema">
-            <img src="/lumix.jpeg" alt="Dinesh Jagwani at the Panasonic LUMIX podcast studio" width={1600} height={1067} className="h-full w-full object-contain" />
+            <img
+  src={lumixImg}
+  alt="Dinesh Jagwani at the Panasonic LUMIX podcast studio"
+  width={1600}
+  height={1067}
+  className="h-full w-full object-cover"   // or object-contain if you prefer
+/>
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent" />
             <div className="absolute bottom-3 left-3 rounded-md bg-background/70 px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-gold backdrop-blur">
               LUMIX Studio · Mentor Session
